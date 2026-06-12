@@ -10,7 +10,8 @@ Livro* cadastrarLivro(Livro *lista) {
     scanf("%d", &codigo_teste);
 
     if (buscarLivro(lista, codigo_teste) != NULL) {
-        printf("\n[ERRO] Ja existe um livro cadastrado com o codigo %d!\n", codigo_teste);
+        printf("\nJa existe um livro cadastrado com o codigo: %d", codigo_teste);
+        printf("\nLivro nao cadastrado\n");
         return lista;
     }
 
