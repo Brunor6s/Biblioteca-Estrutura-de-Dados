@@ -43,7 +43,7 @@ Livro* removerLivro(Livro *lista, int codigo) {
             else lista = atual->prox;
 
             free(atual);
-            printf("\nLivro removido do catálogo\n");
+            printf("\nLivro removido do catalogo\n");
             return lista;
         }
         ant = atual;

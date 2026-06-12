@@ -33,8 +33,10 @@ int main() {
                 printf("Codigo: ");
                 scanf("%d", &cod);
                 livro = buscarLivro(lista, cod);
-                if (livro) snprintf(msg, sizeof(msg), "Livro removido do catalogo: %s", livro->titulo);
-                else snprintf(msg, sizeof(msg), "Tentativa de remocao: codigo %d nao encontrado", cod);
+                if (livro) {
+                    printf("\nRemovendo: %s", livro->titulo);
+                    snprintf(msg, sizeof(msg), "Livro removido do catalogo: %s", livro->titulo);
+                }else snprintf(msg, sizeof(msg), "Tentativa de remocao: codigo %d nao encontrado", cod);
                 lista = removerLivro(lista, cod);
                 topo = push(topo, msg);
                 break;
@@ -45,10 +47,10 @@ int main() {
                 livro = buscarLivro(lista, cod);
                 if (livro && livro->quantidade > 0) {
                     livro->quantidade--;
+                    printf("\nRemovido uma unidade do livro: %s\n", livro->titulo);
                     snprintf(msg, sizeof(msg), "Livro removido: %s", livro->titulo);
                     topo = push(topo, msg);
                 } else printf("Indisponivel\n");
-                printf("Livro removido\n");
                 break;
 
             case 4:
@@ -71,10 +73,10 @@ int main() {
                 livro = buscarLivro(lista, cod);
                 if (livro && livro->quantidade > 0) {
                     livro->quantidade--;
+                    printf("\nEmprestimo realizado do livro: %s\n", livro->titulo);
                     snprintf(msg, sizeof(msg), "Emprestimo realizado: %s", livro->titulo);
                     topo = push(topo, msg);
                 } else printf("Indisponivel\n");
-                printf("Emprestimo realizado\n");
                 break;
 
             case 7:
@@ -83,10 +85,10 @@ int main() {
                 livro = buscarLivro(lista, cod);
                 if (livro) {
                     livro->quantidade++;
+                    printf("\nDevolucao realizada do livro: %s\n", livro->titulo);
                     snprintf(msg, sizeof(msg), "Devolucao realizada: %s", livro->titulo); //Imprimido interno
                     topo = push(topo, msg);
                 } else printf("\nNao encontrado\n");
-                printf("\nDevolucao realizada\n");
                 break;
 
             case 8:
