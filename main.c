@@ -84,10 +84,16 @@ int main() {
                 scanf("%d", &cod);
                 livro = buscarLivro(lista, cod);
                 if (livro) {
-                    livro->quantidade++;
-                    printf("\nDevolucao realizada do livro: %s\n", livro->titulo);
-                    snprintf(msg, sizeof(msg), "Devolucao realizada: %s", livro->titulo); //Imprimido interno
-                    topo = push(topo, msg);
+                    if (livro->quantidade < livro->quantidade_inicial) {
+                        livro->quantidade++;
+                        printf("\nDevolucao realizada do livro: %s\n", livro->titulo);
+                        snprintf(msg, sizeof(msg), "Devolucao realizada: %s", livro->titulo);
+                        topo = push(topo, msg);
+                    } else {
+                        printf("\nQuantidade ja atingiu o maximo cadastrado (%d)\n", livro->quantidade_inicial);
+                        snprintf(msg, sizeof(msg), "Tentativa de devolver acima do maximo: %s", livro->titulo);
+                        topo = push(topo, msg);
+                    }
                 } else printf("\nLivro nao encontrado no catalogo\n");
                 break;
 
