@@ -7,6 +7,7 @@ typedef struct Livro {
     char autor[100];
     int ano;
     int quantidade;
+    int quantidade_inicial;
     struct Livro *prox;
 } Livro;
 
