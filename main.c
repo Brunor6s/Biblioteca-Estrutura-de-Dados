@@ -12,7 +12,7 @@ int main() {
     Livro *livro;
 
     do {
-        printf("\nEscolha uma opcao a seguir:\n1 - Cadastrar\n2 - Remover do Catalogo\n3 - Remover\n4 - Buscar\n5 - Listar\n6 - Emprestar\n7 - Devolver\n8 - Historico\n0 - Sair\n");
+        printf("\nEscolha uma opcao a seguir:\n1 - Cadastrar\n2 - Remover do Catalogo\n3 - Remover\n4 - Buscar\n5 - Listar\n6 - Emprestar\n7 - Devolver\n8 - Historico\n9 - Adicionar ao Acervo\n0 - Sair\n");
         scanf("%d", &op);
 
         switch(op) {
@@ -104,7 +104,22 @@ int main() {
                 printf("\nHistorico topo/recente:\n");
                 mostrarHistorico(topo);
                 break;
-        }
+        
+            case 9:
+                printf("Codigo: ");
+                scanf("%d", &cod);
+                livro = buscarLivro(lista, cod);
+                if (livro) {
+                    livro->quantidade++;
+                    livro->quantidade_inicial++;
+                    printf("\nLivro adicionado ao acervo: %s\n", livro->titulo);
+                    snprintf(msg, sizeof(msg), "Livro adicionado ao acervo: %s", livro->titulo);
+                    topo = push(topo, msg);
+                } else {
+                    printf("\nLivro nao encontrado no catalogo\n");
+                }
+                break;
+            }
 
     } while(op != 0);
 
