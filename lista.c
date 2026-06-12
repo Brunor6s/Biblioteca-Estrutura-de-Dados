@@ -50,7 +50,7 @@ Livro* removerLivro(Livro *lista, int codigo) {
         atual = atual->prox;
     }
 
-    printf("Nao encontrado\n");
+    printf("\nLivro nao encontrado no catalogo\n");
     return lista;
 }
 

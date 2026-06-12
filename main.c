@@ -50,7 +50,7 @@ int main() {
                     printf("\nRemovido uma unidade do livro: %s\n", livro->titulo);
                     snprintf(msg, sizeof(msg), "Livro removido: %s", livro->titulo);
                     topo = push(topo, msg);
-                } else printf("Indisponivel\n");
+                } else printf("\nLivro nao encontrado no catalogo\n");
                 break;
 
             case 4:
@@ -59,7 +59,7 @@ int main() {
                 livro = buscarLivro(lista, cod);
                 if (livro) printf("\nEncontrado: %s - %s (%d) Qtd:%d\n",
                     livro->titulo, livro->autor, livro->ano, livro->quantidade);
-                else printf("\nNao encontrado\n");
+                else printf("\nLivro nao encontrado no catalogo\n");
                 break;
 
             case 5:
@@ -76,7 +76,7 @@ int main() {
                     printf("\nEmprestimo realizado do livro: %s\n", livro->titulo);
                     snprintf(msg, sizeof(msg), "Emprestimo realizado: %s", livro->titulo);
                     topo = push(topo, msg);
-                } else printf("Indisponivel\n");
+                } else printf("\nLivro nao encontrado no catalogo\n");
                 break;
 
             case 7:
@@ -88,7 +88,7 @@ int main() {
                     printf("\nDevolucao realizada do livro: %s\n", livro->titulo);
                     snprintf(msg, sizeof(msg), "Devolucao realizada: %s", livro->titulo); //Imprimido interno
                     topo = push(topo, msg);
-                } else printf("\nNao encontrado\n");
+                } else printf("\nLivro nao encontrado no catalogo\n");
                 break;
 
             case 8:
