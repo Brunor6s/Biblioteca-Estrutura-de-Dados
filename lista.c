@@ -31,6 +31,8 @@ Livro* cadastrarLivro(Livro *lista) {
     printf("Quantidade: ");
     scanf("%d", &novo->quantidade);
 
+    novo->quantidade_inicial = novo->quantidade;
+
     novo->prox = lista;
     return novo;
 }
@@ -65,8 +67,8 @@ Livro* buscarLivro(Livro *lista, int codigo) {
 
 void listarLivros(Livro *lista) {
     while (lista) {
-        printf("%d - %s | %s | %d | Qtd:%d\n",
-            lista->codigo, lista->titulo, lista->autor, lista->ano, lista->quantidade);
+        printf("%d - %s | %s | %d | Qtd:%d/%d\n",
+            lista->codigo, lista->titulo, lista->autor, lista->ano, lista->quantidade, lista->quantidade_inicial);
         lista = lista->prox;
     }
 }
