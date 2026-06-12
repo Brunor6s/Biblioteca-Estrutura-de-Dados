@@ -47,6 +47,9 @@ int main() {
                 livro = buscarLivro(lista, cod);
                 if (livro && livro->quantidade > 0) {
                     livro->quantidade--;
+                    if (livro->quantidade_inicial > 0) {
+                        livro->quantidade_inicial--;
+                    }
                     printf("\nRemovido uma unidade do livro: %s\n", livro->titulo);
                     snprintf(msg, sizeof(msg), "Livro removido: %s", livro->titulo);
                     topo = push(topo, msg);
