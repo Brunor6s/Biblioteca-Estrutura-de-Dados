@@ -3,7 +3,7 @@ Trabalho de estrutura de dados
 
 me da um textao cheio de emoji pra um readme de estrutura de dados que faz uma biblitoeca 
 
-<img width="420" height="250" alt="Image" src="https://github.com/user-attachments/assets/97f0c829-157b-4e57-b29a-c2daee5c9b7f" /><img width="74" height="73" alt="Image" src="https://github.com/user-attachments/assets/076b62e3-58b8-416b-a3ba-dbe51e8b0324" />
+<img width="700" height="250" alt="Image" src="https://github.com/user-attachments/assets/97f0c829-157b-4e57-b29a-c2daee5c9b7f" /><img width="74" height="73" alt="Image" src="https://github.com/user-attachments/assets/076b62e3-58b8-416b-a3ba-dbe51e8b0324" />
 
 📚✨ Estrutura de Dados em C — Biblioteca Virtual ✨📚
 🚀 Sobre o Projeto
